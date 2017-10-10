@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+
+/* CODIGO DESENVOLVIDO PARA FINS DE EXERCICIO EM PROGRAMAÇÃO - URI ONLINE
+*  ALUNO: FRANCISCO PIRES JUNIOR
+*  CURSO: CIÊNCIA DA COMPUTAÇÃO - UNIVERSIDADE FEDERAL DE RORAIMA
+*/
+
+main(){
+
+    char vetor[1001];
+    int n , i, j;
+    int c = 0;
+    int e = 0;
+    int diamantes = 0;
+    scanf("%d",&n);
+    for(i = 0 ; i < n ;i++){
+        scanf("%s",vetor);
+        for(j = 0 ; vetor[j] != '\0';j++){
+            if(vetor[j] == '<'){
+                c++;
+            }
+            if(vetor[j] == '>'){
+                if(c > 0){
+                    c--;
+                    diamantes++;
+                }
+            }
+        }
+        if (c > 0){
+            e++;
+        }
+        if(c == 0 || e>0){
+            printf("%d",diamantes);
+            printf("\n");
+        }
+        diamantes=c=e=0;
+
+    }
+
+}
