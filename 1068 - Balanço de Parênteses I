@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+/* CODIGO DESENVOLVIDO PARA FINS DE EXERCICIO EM PROGRAMAÇÃO - URI ONLINE
+*  ALUNO: FRANCISCO PIRES JUNIOR
+*  CURSO: CIÊNCIA DA COMPUTAÇÃO - UNIVERSIDADE FEDERAL DE RORAIMA
+*/
+
+int main(){
+
+    char vet[1001];
+    int a = 0;
+    int f = 0;
+    int i;
+    while(scanf("%s",vet) != EOF){
+        for(i = 0 ; vet[i] != '\0' ;i++){
+            if(vet[i] == '('){
+                a++;
+            }
+            if(vet[i] == ')'){
+                a--;
+                if(a < 0){
+                    f++;
+                }
+            }
+        }
+        if(a == 0 && f == 0){
+            printf("correct");
+        }else{
+            printf("incorrect");
+        }
+        printf("\n");
+        a = f = 0;
+    }
+
+
+    return 0;
+}
